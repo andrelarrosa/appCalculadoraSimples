@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,70 +41,95 @@ public class MainActivity extends AppCompatActivity {
         btnMais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                n1 = Double.parseDouble(cndNum.getText().toString());
-                cndNum.setText(cndNum.getText().toString() + " + ");
-                c = '+';
-                btnMenos.setEnabled(false);
-                btnDiv.setEnabled(false);
-                btnVezes.setEnabled(false);
-
+                try {
+                    n1 = Double.parseDouble(cndNum.getText().toString());
+                    cndNum.setText(cndNum.getText().toString() + " + ");
+                    c = '+';
+                    btnMenos.setEnabled(false);
+                    btnDiv.setEnabled(false);
+                    btnVezes.setEnabled(false);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, "Informe um valor", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         btnDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                n1 = Double.parseDouble(cndNum.getText().toString());
-                cndNum.setText(cndNum.getText().toString() + " / ");
-                c = '/';
-                btnMenos.setEnabled(false);
-                btnMais.setEnabled(false);
-                btnVezes.setEnabled(false);
+                try {
+                    n1 = Double.parseDouble(cndNum.getText().toString());
+                    cndNum.setText(cndNum.getText().toString() + " / ");
+                    c = '/';
+                    btnMenos.setEnabled(false);
+                    btnMais.setEnabled(false);
+                    btnVezes.setEnabled(false);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, "Informe um valor", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         btnMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                n1 = Double.parseDouble(cndNum.getText().toString());
-                cndNum.setText(cndNum.getText().toString() + " - ");
-                c = '-';
-                btnMais.setEnabled(false);
-                btnDiv.setEnabled(false);
-                btnVezes.setEnabled(false);
+                try {
+                    n1 = Double.parseDouble(cndNum.getText().toString());
+                    cndNum.setText(cndNum.getText().toString() + " - ");
+                    c = '-';
+                    btnMais.setEnabled(false);
+                    btnDiv.setEnabled(false);
+                    btnVezes.setEnabled(false);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, "Informe um valor", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         btnVezes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                n1 = Double.parseDouble(cndNum.getText().toString());
-                cndNum.setText(cndNum.getText().toString() + " X ");
-                c = 'X';
-                btnMenos.setEnabled(false);
-                btnDiv.setEnabled(false);
-                btnMais.setEnabled(false);
+                try {
+                    n1 = Double.parseDouble(cndNum.getText().toString());
+                    cndNum.setText(cndNum.getText().toString() + " X ");
+                    c = 'X';
+                    btnMenos.setEnabled(false);
+                    btnDiv.setEnabled(false);
+                    btnMais.setEnabled(false);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, "Informe um valor", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         btnIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String aux = cndNum.getText().toString();
-                String a[] = aux.split(" ");
-                n2 = Double.parseDouble(a[2]);
+                try {
+                    String aux = cndNum.getText().toString();
+                    String a[] = aux.split(" ");
+                    n2 = Double.parseDouble(a[2]);
 
-                if(c == '+'){
-                    txtRes.setText(""+(n1+n2));
+                    if (c == '+') {
+                        txtRes.setText("" + (n1 + n2));
+                    } else if (c == '-') {
+                        txtRes.setText("" + (n1 - n2));
+                    } else if (c == 'X') {
+                        txtRes.setText("" + (n1 * n2));
+                    } else if (c == '/') {
+                        txtRes.setText("" + (n1 / n2));
+                    }
                 }
-                else if(c == '-'){
-                    txtRes.setText(""+(n1-n2));
-                }
-                else if(c == 'X'){
-                    txtRes.setText(""+(n1*n2));
-                }
-                else if(c == '/'){
-                    txtRes.setText(""+(n1/n2));
+                catch (Exception e){
+                    Toast.makeText(MainActivity.this, "Informe o segundo valor", Toast.LENGTH_SHORT).show();
                 }
             }
         });
