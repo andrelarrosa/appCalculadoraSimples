@@ -45,9 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     n1 = Double.parseDouble(cndNum.getText().toString());
                     cndNum.setText(cndNum.getText().toString() + " + ");
                     c = '+';
-                    btnMenos.setEnabled(false);
-                    btnDiv.setEnabled(false);
-                    btnVezes.setEnabled(false);
+                    bloquearOperacoes();
                 }
                 catch (Exception e){
                     e.printStackTrace();
@@ -63,9 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     n1 = Double.parseDouble(cndNum.getText().toString());
                     cndNum.setText(cndNum.getText().toString() + " / ");
                     c = '/';
-                    btnMenos.setEnabled(false);
-                    btnMais.setEnabled(false);
-                    btnVezes.setEnabled(false);
+                    bloquearOperacoes();
                 }
                 catch (Exception e){
                     e.printStackTrace();
@@ -81,9 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     n1 = Double.parseDouble(cndNum.getText().toString());
                     cndNum.setText(cndNum.getText().toString() + " - ");
                     c = '-';
-                    btnMais.setEnabled(false);
-                    btnDiv.setEnabled(false);
-                    btnVezes.setEnabled(false);
+                    bloquearOperacoes();
                 }
                 catch (Exception e){
                     e.printStackTrace();
@@ -99,9 +93,8 @@ public class MainActivity extends AppCompatActivity {
                     n1 = Double.parseDouble(cndNum.getText().toString());
                     cndNum.setText(cndNum.getText().toString() + " X ");
                     c = 'X';
-                    btnMenos.setEnabled(false);
-                    btnDiv.setEnabled(false);
-                    btnMais.setEnabled(false);
+                    bloquearOperacoes();
+
                 }
                 catch (Exception e){
                     e.printStackTrace();
@@ -149,6 +142,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void bloquearOperacoes(){
+        btnMenos.setEnabled(false);
+        btnDiv.setEnabled(false);
+        btnMais.setEnabled(false);
+        btnVezes.setEnabled(false);
     }
 
 }
