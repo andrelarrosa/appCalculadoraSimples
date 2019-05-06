@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnDecimal;
     private double n1, n2;
     private char c;
-    private byte contDec = 0;
+    private byte contDec = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cndNum.setText(cndNum.getText().toString() + "1");
+                contDec = 0;
             }
         });
 
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cndNum.setText(cndNum.getText().toString() + "2");
+                contDec = 0;
             }
         });
 
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cndNum.setText(cndNum.getText().toString() + "3");
+                contDec = 0;
             }
         });
 
@@ -86,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cndNum.setText(cndNum.getText().toString() + "4");
+                contDec = 0;
             }
         });
 
@@ -93,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cndNum.setText(cndNum.getText().toString() + "5");
+                contDec = 0;
             }
         });
 
@@ -100,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cndNum.setText(cndNum.getText().toString() + "6");
+                contDec = 0;
             }
         });
 
@@ -107,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cndNum.setText(cndNum.getText().toString() + "7");
+                contDec = 0;
             }
         });
 
@@ -114,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cndNum.setText(cndNum.getText().toString() + "8");
+                contDec = 0;
             }
         });
 
@@ -121,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cndNum.setText(cndNum.getText().toString() + "9");
+                contDec = 0;
             }
         });
 
@@ -128,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cndNum.setText(cndNum.getText().toString() + "0");
+                contDec = 0;
             }
         });
 
